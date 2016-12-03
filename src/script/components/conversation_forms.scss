@@ -13,6 +13,9 @@
     font-size: 16px;
     font-size-adjust: 100%;
   }
+  .hidden{
+    display: none!important
+  }
 
   @import "../../materialize/sass/components/mixins";
   @import "../../materialize/sass/components/color";
@@ -185,7 +188,7 @@
           width: 200px;
       }
   }
-  
+
   @-webkit-keyframes pulse {
     from { opacity: 0; }
     to { opacity: 0.5; }

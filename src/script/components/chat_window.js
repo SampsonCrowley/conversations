@@ -1,32 +1,36 @@
 import React, {Component} from 'react';
-import WelcomeMessage from './welcome_message';
+import ReactDOM from 'react-dom';
+import Message from './message';
+import Response from './response';
 
 export default class ChatWindow extends Component {
+
   constructor() {
     super();
-    var mainForm = document.getElementById("convo-form");
-    var all = [...mainForm.childNodes];
-    var inputItems = []
-    all.forEach(function(item){
-      if (item.nodeType != 3) {
-        inputItems.push(item);
-      }
-    })
-    this.state = {
-      inputs: inputItems
-    };
+    this.componentDidUpdate = this.componentDidUpdate.bind(this)
+  }
+
+  componentDidUpdate() {
+    // Scroll as new elements come along
+    var node = ReactDOM.findDOMNode(this.refs.mainChat)
+    node.scrollTop = node.scrollHeight;
   }
 
   render() {
-    let items = ""
-    this.state.inputs.forEach(function (item){
-      items += item.id
-    })
+    const children = [];
+
+    for (var i = 0; i < this.props.numChildren && i < this.props.children.length; i += 1) {
+      if(this.props.children[i].type == "response"){
+        children.push(<Response key={i} data={this.props.children[i]} />);
+      }else{
+        children.push(<Message key={i} data={this.props.children[i]} />);
+      }
+    };
+
     return (
       // Add your component markup and other subcomponent references here.
-      <ol className="convo-chat-history">
-        <WelcomeMessage />
-        {items}
+      <ol className="convo-chat-history" ref="mainChat">
+        {children}
       </ol>
     );
   }

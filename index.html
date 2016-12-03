@@ -4,21 +4,24 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>Webpack-react</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
   <form id="convo-form">
-    <input type="text" id="name" name="name">
-    <input type="text" id="birthday" name="birthday">
-    <input type="text" id="email" name="email">
-    <input type="text" id="password" name="password">
-    <input type="text" id="more" name="name">
-    <input type="text" id="inputs" name="birthday">
-    <input type="text" id="to" name="email">
-    <select>
+    <input type="text" id="name" name="name" data-question="What is your name?">
+    <input type="text" id="birthday" name="birthday" data-question="What is your birthday? (please enter DD/MM/YYYY)">
+    <input type="text" id="email" name="email" data-question="Thanks! What is the best email for me to reach you at?">
+    <input type="text" id="password" name="password" data-question="Please enter the password you would to use for your account. (Don't worry, I'm a robot, no one will see it)">
+    <input type="text" id="more" name="more">
+    <input type="text" id="inputs" name="inputs" data-secure="true">
+    <input type="text" id="to" name="to">
+    <input type="text" id="put" name="put">
+    <input type="hidden" name="hidden1" value="some-val"/>
+    <input type="hidden" name="hidden2" value="some-val"/>
+    <select name="select">
       <option value="none">Test</option>
       <option value="2">Test 2</option>
-
     </select>
   </form>
 
@@ -27,7 +30,7 @@
   <script type="text/javascript" src="http://localhost:3010/webpack-dev-server.js"></script>
   <!-- include the bundle that contains all our scripts, produced by webpack -->
   <!-- the bundle is served by the webpack-dev-server, so serve it also from localhost:3000 -->
-  <script type="text/javascript" src="http://localhost:3010/assets/index.js"></script>
+  <script type="text/javascript" src="http://localhost:3010/assets/conversation_forms.js"></script>
   <script>
 
   </script>

@@ -15,8 +15,8 @@ var common = {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    filename: 'index.js',
-    sourceMapFilename: '[file].map'
+    filename: 'conversation_forms.js',
+    sourceMapFilename: 'conversation_forms.map'
   },
   module: {
     loaders: [{
@@ -72,12 +72,6 @@ if (TARGET === 'build') {
     devtool: 'source-map',
     output: {
       path: './dist'
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        title: 'Webpack-react',
-        template: 'index-template.ejs'
-      })
-    ]
+    }
   });
 }

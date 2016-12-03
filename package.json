@@ -1,10 +1,10 @@
 {
   "name": "webpack-react",
-  "version": "0.0.0",
-  "description": "Bundling ES6, React, SASS and Bootstrap with Webpack",
-  "homepage": "",
-  "repository": "",
-  "author": "",
+  "version": "0.0.1",
+  "description": "Frontend for Conversation Forms",
+  "homepage": "https://github.com/SampsonCrowley/conversations",
+  "repository": "https://github.com/SampsonCrowley/conversations.git",
+  "author": "Sampson Crowley",
   "main": "index.jsx",
   "scripts": {
     "build": "webpack -d",
@@ -12,7 +12,6 @@
     "serve": "./node_modules/.bin/http-server -p 3000",
     "dev": "webpack-dev-server -d --progress --colors --port 3010"
   },
-  "author": "Sampson Crowley",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.3.7",
@@ -31,7 +30,7 @@
     "npm-install-webpack-plugin": "^2.0.2",
     "postcss": "^5.0.15",
     "postcss-loader": "^0.8.1",
-    "react": "^0.14.7",
+    "react": "^0.14.8",
     "react-dom": "^0.14.7",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
