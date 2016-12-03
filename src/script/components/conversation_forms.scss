@@ -1,0 +1,222 @@
+@charset "UTF-8";
+
+// Mixins
+// @import "components/prefixer";
+
+
+
+
+.convo-window{
+  &, *{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-size-adjust: 100%;
+  }
+
+  @import "../../materialize/sass/components/mixins";
+  @import "../../materialize/sass/components/color";
+
+  // Variables;
+  @import "../../materialize/sass/components/variables";
+
+  // Reset
+  @import "../../materialize/sass/components/normalize";
+
+  @import "../../materialize/sass/components/global";
+  @import "../../materialize/sass/components/forms/forms";
+
+  display: flex;
+  width: 100%;
+  height: 500px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: -1px 2px 10px #999;
+  background: #c4d4e9;
+  padding: 20px;
+  flex-flow: column nowrap;
+
+  .convo-chat-history {
+    flex: 1;
+    padding: 10px 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style: none;
+    background: none;
+    margin: 0;
+    margin-bottom: 15px;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+  }
+
+  #convo-form-input {
+    box-sizing: border-box;
+    background-color: #efefef;
+    height: 3rem;
+    color: #666;
+    font-size: 16px;
+    padding: 4px 15px 4px 30px;
+    border: 1px solid #C0C0BA;
+    font-weight: 400;
+    border-radius:4px 15px 15px;
+    overflow: hidden;
+    resize: none;
+    transition: all 0.4s cubic-bezier(0.565, -0.26, 0.255, 1.41);
+    outline: none;
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: rgba(43, 187, 173, .7)
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: rgba(43, 187, 173, .7)
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: rgba(43, 187, 173, .7)
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: rgba(43, 187, 173, .7)
+    }
+  }
+
+  .other .msg {
+      border-top-left-radius: 0px;
+      box-shadow: -1px 2px 0px #c1cbcd;
+  }
+  .other:before {
+      content: "";
+      position: relative;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      width: 0px;
+      height: 0px;
+      border: 5px solid #efefef;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+
+  }
+
+  .self {
+      justify-content: flex-end;
+      align-items: flex-end;
+  }
+  .self .msg {
+      border-bottom-right-radius: 0px;
+      box-shadow: 1px 2px 0px #c1cbcd;
+  }
+  .self:after {
+      content: "";
+      position: relative;
+      display: inline-block;
+      float: right;
+      bottom: 0px;
+      right: 0px;
+      width: 0px;
+      height: 0px;
+      border: 5px solid #efefef;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      box-shadow: 0px 2px 0px #c1cbcd;
+  }
+
+  .msg {
+      background: #efefef;
+      min-width: 50px;
+      padding: 10px;
+      border-radius: 2px;
+      word-break: break-all;
+  }
+  .msg p {
+      font-size: 16px;
+      margin: 0 0 2px 0;
+      color: #777;
+      transition: all .2s ease;
+  }
+  .convo-chat-history li {
+      padding: 0.5rem;
+      overflow: hidden;
+      display: flex;
+  }
+  #convo-form-enter {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #convo-form-enter:hover {
+    background-color: #2bbbad;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  }
+  #convo-form-enter:active {
+    margin: 2px 0 -2px 0;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+  }
+
+  /* R E S P O N S I V E   C O N F I G U R A T I O N */
+
+  @media screen and (max-width: 750px) {
+      ::-webkit-scrollbar {
+      display: none;
+      }
+      .msg p {
+          font-size: 14px;
+      }
+  }
+  @media screen and (max-width: 550px) {
+      .msg p {
+          max-width: 250px;
+      }
+      .msg img {
+          width: 200px;
+      }
+  }
+  
+  @-webkit-keyframes pulse {
+    from { opacity: 0; }
+    to { opacity: 0.5; }
+  }
+
+  ::-webkit-scrollbar {
+    min-width: 12px;
+    width: 12px;
+    max-width: 12px;
+    min-height: 12px;
+    height: 12px;
+    max-height: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: 100px;
+    border: solid 3px #252C33;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(255,255,255,0.1);
+  }
+
+  ::-webkit-scrollbar-button {
+    display: block;
+    height: 26px;
+  }
+}

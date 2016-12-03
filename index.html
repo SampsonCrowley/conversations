@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>Webpack-react</title>
+</head>
+
+<body>
+  <form id="convo-form">
+    <input type="text" id="name" name="name">
+    <input type="text" id="birthday" name="birthday">
+    <input type="text" id="email" name="email">
+    <input type="text" id="password" name="password">
+    <input type="text" id="more" name="name">
+    <input type="text" id="inputs" name="birthday">
+    <input type="text" id="to" name="email">
+    <select>
+      <option value="none">Test</option>
+      <option value="2">Test 2</option>
+
+    </select>
+  </form>
+
+  <!-- include the webpack-dev-server script so our scripts get reloaded when we make a change -->
+  <!-- we'll run the webpack dev server on port 3000, so make sure it is correct -->
+  <script type="text/javascript" src="http://localhost:3010/webpack-dev-server.js"></script>
+  <!-- include the bundle that contains all our scripts, produced by webpack -->
+  <!-- the bundle is served by the webpack-dev-server, so serve it also from localhost:3000 -->
+  <script type="text/javascript" src="http://localhost:3010/assets/index.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>
