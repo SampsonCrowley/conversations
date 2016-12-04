@@ -61,7 +61,7 @@
     padding: 4px 15px 4px 30px;
     border: 1px solid #C0C0BA;
     font-weight: 400;
-    border-radius:4px 15px 15px;
+    border-radius: 8px 8px 32px 8px;
     overflow: hidden;
     resize: none;
     transition: all 0.4s cubic-bezier(0.565, -0.26, 0.255, 1.41);
@@ -127,13 +127,13 @@
       min-width: 50px;
       padding: 10px;
       border-radius: 2px;
-      word-break: break-all;
   }
   .msg p {
       font-size: 16px;
       margin: 0 0 2px 0;
       color: #777;
       transition: all .2s ease;
+      word-break: keep-all;
   }
   .convo-chat-history li {
       padding: 0.5rem;
